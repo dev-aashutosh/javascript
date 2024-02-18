@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <script>
+        function findFact(n1) {
+            // alert("okay");
+            let factorial = n1.value;
+            console.log(factorial);
+            factorial = parseInt(factorial);
+            let result = 1;
+            for (let i = factorial; i >= 1; i--) {
+                result *= i;
+            }
+            alert("Factorial:" + result);
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        Enter a number : <input type="text" name="factInput" id="factInput">
+        <button type="button" onclick="findFact(document.getElementById('factInput'))">Factorial</button>
+    </form>
+</body>
+
+</html>

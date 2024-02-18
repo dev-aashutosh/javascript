@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong number</title>
+    <script>
+        function findArmstrong(num) {
+            // Calculate the number of digits
+            let length = num.length;
+
+            // Convert to integer
+            num = parseInt(num, 10);
+
+            // Store the input number temporarily
+            let temp = num;
+
+            // Initialize sum
+            let sum = 0;
+
+            // Compute sum of powers of digits
+            for (let i = 0; i < length; i++) {
+                sum += Math.pow((temp % 10), length);
+                temp = parseInt(temp / 10, 10);
+            }
+
+            // Check if it's an Armstrong number
+            if (num == sum) {
+                alert("It is an Armstrong number");
+            } else {
+                alert("It is not an Armstrong number");
+            }
+        }
+    </script>
+
+
+</head>
+
+<form>
+    Enter a number: <input type="text" name="feild" id=""><br>
+    <button type="button" onclick="findArmstrong(feild.value)">Check</button>
+</form>
+
+</html>

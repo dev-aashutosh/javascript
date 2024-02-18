@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Generator</title>
+    <script>
+        // Function to generate Fibonacci sequence
+        function generateFibonacci(input) {
+            // Convert input to integer
+            var num = parseInt(input);
+
+            // Initialize variables for Fibonacci sequence
+            var last = 0;           // Previous Fibonacci number
+            var prev = 1;           // Current Fibonacci number
+            var sequence = "";      // String to store the Fibonacci sequence
+
+            // Generate Fibonacci sequence up to the input number
+            for (var i = 1; i <= num; i++) {
+                var current = last + prev;  // Calculate current Fibonacci number
+                sequence += last + " ";     // Add last Fibonacci number to the sequence
+                last = prev;                // Update last Fibonacci number
+                prev = current;             // Update current Fibonacci number
+            }
+
+            // Output the Fibonacci sequence
+            document.write(sequence);
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        Enter a number: <input type="text" name="input" id=""><br>
+        <button type="button" onclick="generateFibonacci(input.value)">Generate Fibonacci</button>
+    </form>
+</body>
+
+</html>

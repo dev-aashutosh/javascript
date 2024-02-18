@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect number</title>
+    <script>
+        function checkPerfect(n1) {
+            // Initialize sum to 0
+            sum = 0;
+
+            // Loop through numbers from 1 to n1-1 to find divisors
+            for (let i = 1; i < n1; i++) {
+                // If i is a divisor of n1, add it to the sum
+                if (n1 % i == 0) {
+                    sum += i;
+                }
+            }
+
+            // Check if the sum of divisors equals n1
+            if (sum == n1) {
+                // If sum equals n1, it's a perfect number
+                alert("The number you entered is a perfect number");
+            } else {
+                // If sum doesn't equal n1, it's not a perfect number
+                alert("The number you entered is not a perfect number");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        Enter a number: <input type="text" name="input" id=""><br>
+        <button type="button" onclick="checkPerfect(input.value)">Check Perfect</button>
+    </form>
+</body>
+
+</html>

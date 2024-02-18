@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function checkLength(n1, msg) {
+            if (n1.length == 0) {
+                alert(msg);
+                formName.name.focus()
+                return false;
+            }
+            return true;
+        }
+        function pass(n1, msg) {
+            if (n1.length <= 6) {
+                alert(msg)
+                formName.pass.focus()
+                return false
+            }
+            return true
+        }
+
+        function validate(f1) {
+            name = f1.name.value;
+            username = f1.userName.value;
+            password = f1.pass.value;
+            pass2 = f1.pass2.value;
+
+            if (!checkLength(name, "The name must not be empty")) {
+                return false;
+            }
+            if (!checkLength(username, "The UserName must not be empty")) {
+                return false;
+            }
+            if (!pass(password, "the password must be 6 characters long")) {
+                return false;
+            }
+            if (password != pass2) {
+                alert("Passwords must be same")
+                return false
+            }
+            return false
+        }
+    </script>
+</head>
+
+<body>
+    <form action="abc.php" name="formName" style="display: flex; flex-direction: column; font-size: 2rem;">
+        <label>
+            Name: <input type="text" name="name" id="">
+        </label>
+        <label>
+            Username: <input type="text" name="userName" id="">
+        </label>
+        <label>
+            Password: <input type="text" name="pass" id="">
+        </label>
+        <label>
+            Repeat Password: <input type="text" name="pass2" id="">
+        </label>
+        <button style="width: min-content; font-size: 1.4rem;" onclick="return validate(formName)">Submit</button>
+    </form>
+</body>
+
+</html>
