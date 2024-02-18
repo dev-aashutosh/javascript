@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic number</title>
+    <script>
+        function checkMagic(n1) {
+            // Convert n1 to an integer
+            n1 = parseInt(n1);
+
+            // Initialize variables
+            let temp = n1; // Store the original number
+            let sum = 0;   // Initialize sum of digits
+
+            // Continue looping until temp becomes 0
+            while (temp !== 0) {
+                let rem = temp % 10; // Extract the last digit
+                sum += rem;          // Add the last digit to the sum
+                temp = parseInt(temp / 10); // Remove the last digit from temp
+
+                // Reset temp and sum if temp is 0 and sum is >= 10
+                if (temp === 0 && sum >= 10) {
+                    temp = sum;
+                    sum = 0;
+                }
+            }
+
+            // Check if the final sum is equal to 1
+            if (sum === 1) {
+                alert("Magic number");
+            } else {
+                alert("Not a magic number");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        Enter a number: <input type="text" name="input" id=""><br>
+        <button type="button" onclick="checkMagic(input.value)">Check Magic</button>
+    </form>
+</body>
+
+</html>
