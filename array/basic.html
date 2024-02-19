@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script>
+        // Function to calculate the sum of numbers
+        function Addition(c1) {
+            var sum = 0; // Initialize sum variable
+            for (var i = 0; i < 5; i++) { // Loop through input elements
+                sum += parseInt(c1[i].value); // Add each value to the sum after converting it to an integer
+            }
+            alert("The sum of the numbers : " + sum); // Display the sum
+        }
+
+        // Function to calculate the subtraction of numbers
+        function Subtraction() {
+
+            /** The following line throws an error because getElementById cannot be used to retrieve multiple elements
+             c1 = document.getElementById("itxt"); */
+
+            c1 = document.getElementsByName("itxt"); // Get all elements with the name "itxt"
+            var subs = 0; // Initialize subtraction variable
+            for (var i = 0; i < 5; i++) { // Loop through input elements
+                subs -= parseInt(c1[i].value); // Subtract each value from the subs variable after converting it to an integer
+            }
+            alert("The Subtraction : " + subs); // Display the subtraction
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <!-- Input fields for numbers -->
+        Enter num1 <input type="text" name="itxt"><br>
+        Enter num2 <input type="text" name="itxt"><br>
+        Enter num3 <input type="text" name="itxt"><br>
+        Enter num4 <input type="text" name="itxt"><br>
+        Enter num5 <input type="text" name="itxt">
+        <!-- Buttons to trigger Addition and Subtraction functions -->
+        <button type="button" onclick="Addition(itxt)">Addition</button>
+        <button type="button" onclick="Subtraction()">Subtraction</button>
+    </form>
+</body>
+
+</html>
