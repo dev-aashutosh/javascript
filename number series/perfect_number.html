@@ -7,6 +7,7 @@
     <title>Perfect number</title>
     <script>
         function checkPerfect(n1) {
+            n1 = parseInt(n1)
             // Initialize sum to 0
             sum = 0;
 
@@ -17,12 +18,14 @@
                     sum += i;
                 }
             }
-
             // Check if the sum of divisors equals n1
             if (sum == n1) {
                 // If sum equals n1, it's a perfect number
                 alert("The number you entered is a perfect number");
-            } else {
+            } else if (sum == 0) {
+                alert("Please enter a valid number and then check")
+            }
+            else {
                 // If sum doesn't equal n1, it's not a perfect number
                 alert("The number you entered is not a perfect number");
             }

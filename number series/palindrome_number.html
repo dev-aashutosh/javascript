@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <script>
+        function checkPalindrome(c1) {
+            // Parse the input value to an integer
+            var num = parseInt(c1);
+
+            var newnum = 0; // This will store the reversed number
+            var temp = num; // This will store the original number temporarily
+            var rem = 0; // This will store the remainder
+
+            while (temp != 0) {
+                rem = temp % 10;
+                newnum = newnum * 10 + rem;// Append the digit to the reversed number
+                temp = parseInt(temp / 10);
+            }
+
+            // Alert the reversed number (for testing purposes)
+            // alert(newnum);
+
+            // Check if the original number is equal to the reversed number
+            if (num === newnum) {
+                alert("The number you entered is a palindrome.");
+            } else {
+                alert("The number you entered is not a palindrome.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        Enter a number: <input type="text" name="input" id=""><br>
+        <button type="button" onclick="checkPalindrome(input.value)">Check Palindrome</button>
+    </form>
+</body>
+
+</html>
