@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic number</title>
+    <script>
+        localStorage.setItem("counter", 0)
+
+        function magicNumber(c1) {
+            var data = c1.value;
+            var chance = parseInt(localStorage.getItem("counter"));
+
+            if (data == "_") {
+                c1.value = ++chance; // Pre-increment
+                localStorage.setItem("counter", chance);
+            } else {
+                alert("Illegal move");
+            }
+
+            if (chance == 9) {
+                checkwin();
+            }
+        }
+
+        function checkwin() {
+            var c1 = document.getElementsByName("val");
+            var cntr = 0;
+
+            for (let i = 0; i < 3; i++) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            cntr = 0;
+            for (let i = 3; i < 6; i++) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            cntr = 0;
+            for (let i = 6; i < 9; i++) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            cntr = 0;
+            for (let i = 0; i < 7; i += 3) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            cntr = 0;
+            for (let i = 1; i < 8; i += 3) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            cntr = 0;
+            for (let i = 2; i < 9; i += 3) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            cntr = 0;
+            for (let i = 0; i < 9; i += 4) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            cntr = 0;
+            for (let i = 0; i < 9; i += 4) {
+                cntr += Number(c1[i].value);
+            }
+            if (cntr != 15) {
+                alert("Sorry you loose");
+                return;
+            }
+
+            alert("you won")
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)">
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)">
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)"><br>
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)">
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)">
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)"><br>
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)">
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)">
+    <input type="button" name="val" id="" value="_" onclick="magicNumber(this)">
+
+</body>
+
+</html>
