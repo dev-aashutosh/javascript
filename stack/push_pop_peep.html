@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+    <script>
+        localStorage.setItem("top", -1);
+
+        function push(c1) {
+
+            t = Number(localStorage.getItem("top"));
+
+            if (t == (c1.length - 1)) {
+                alert("Stack Overflow");
+                return;
+            }
+            else {
+
+                x = prompt("Enter the element to be pushed : ");
+
+                if (x != null && x != "") {
+
+                    t++;
+                    c1[t].value = x;
+                    localStorage.setItem("top", t);
+                }
+                else {
+                    alert("Pushed operation cancelledi")
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <button type="button" value="push" onclick="push(ntxt)"></button>
+    </form>
+    <!-- <button type="button" onclick="pop(ntxt)">Pop</button> -->
+    <!-- <button type="button" onclick="peep(ntxt)">Peep</button> -->
+
+</body>
+
+</html>
