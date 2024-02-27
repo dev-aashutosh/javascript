@@ -5,16 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble Sort</title>
+    <script>
+        function bsort(c1) {
+            for (let i = 0; i < c1.length - 1; i++) {
+                for (let j = 0; j < c1.length - 1; j++) {
+                    let e1 = Number(c1[j].value);
+                    let e2 = Number(c1[j + 1].value);
+
+                    if (e1 > e2) {
+                        let t = e1;
+                        c1[j].value = e2;
+                        c1[j + 1].value = t;
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
 
     <form>
-        <input type="text" name="ntxt" id="">
-        <input type="text" name="ntxt" id="">
-        <input type="text" name="ntxt" id="">
-        <input type="text" name="ntxt" id="">
-        <button type="button" name="submit" onclick="abdakadabra()"></button>
+        <input type="text" name="ntxt" id="ntxt1">
+        <input type="text" name="ntxt" id="ntxt2">
+        <input type="text" name="ntxt" id="ntxt3">
+        <input type="text" name="ntxt" id="ntxt4">
+        <button type="button" onclick="bsort(ntxt)">Sort</button>
     </form>
 </body>
 
