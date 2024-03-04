@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE</title>
+    <script>
+        localStorage.setItem("count", 0)
+        function tictac(c1) {
+
+            c = localStorage.getItem("count")
+
+            if (c1.value == "_") {
+                c++
+                localStorage.setItem("count", c)
+
+                if (c % 2 == 0) {
+                    c1.value = "O"
+                    checkWin()
+                }
+                else {
+                    c1.value = "X"
+                    checkWin()
+                }
+            }
+            else {
+                alert("illegal move")
+            }
+
+        }
+
+        function checkWin(c1) {
+
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)">
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)">
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)"><br>
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)">
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)">
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)"><br>
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)">
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)">
+        <input type="button" name="val" id="" value="_" onclick="tictac(this)">
+    </form>
+</body>
+
+</html>
