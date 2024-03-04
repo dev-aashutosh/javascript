@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection-Sort</title>
+    <script>
+        function sel(c1) {
+
+            for (i = 0; i < c1.length; i++) {
+                minIndex = i
+                for (j = i + 1; j < c1.length; j++) {
+                    n1 = parseInt(c1[minIndex].value)
+                    n2 = parseInt(c1[j].value)
+
+                    if (n1 > n2) {
+                        minIndex = j
+                    }
+                }
+                if (minIndex != i) {
+                    temp = c1[minIndex].value
+                    c1[minIndex].value = c1[i].value
+                    c1[i].value = temp
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="button" value="Sort" onclick="sel(ntxt)">
+    </form>
+</body>
+
+</html>
