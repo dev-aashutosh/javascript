@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+    <script>
+        function sel(c1) {
+            for (i = 0; i < c1.length; i++) {
+                minIndex = i
+                for (j = i + 1; j < c1.length; j++) {
+                    n1 = parseInt(c1[minIndex].value)
+                    n2 = parseInt(c1[j].value)
+
+                    if (n1 > n2) {
+                        minIndex = j
+                    }
+                }
+                if (minIndex != i) {
+                    temp = c1[minIndex].value
+                    c1[minIndex].value = c1[i].value
+                    c1[i].value = temp
+                }
+            }
+        }
+        function bSearch(c1) {
+            sel(c1)
+            l = 0
+            u = c1.length - 1
+
+            for (mid = parseInt((l + u) / 2); l <= u; mid = parseInt((l + u) / 2)) {
+                if (c1[mid].value == srch) {
+                    alert("Element found")
+                    return
+                }
+                else if (srch < c1[mid.value]) {
+                    u = mid - 1
+                }
+                else {
+                    l = mid + 1
+                }
+            }
+            alert("Element not found")
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        Element to be Searched :
+        <input type="text" name="stxt" id=""><br>
+        <input type="button" value="Binary Search" onclick="bSearch(ntxt,stxt.value)">
+    </form>
+</body>
+
+</html>
