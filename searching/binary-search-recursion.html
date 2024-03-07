@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary search recursion</title>
+    <script>
+        function init() {
+            a = []
+
+            for (i = 1; i <= 6; i++) {
+                a[i - 1] = document.getElementById("ntxt" + i).value
+            }
+
+            a.sort(function (a, b) { return a - b })
+            srch = number(prompt("Enter the number to be search: "))
+            bSearch(a, 0, 4, srch)
+
+        }
+
+        function bSearch(a, l, u, sr) {
+            mid = parseInt((l + u) / 2)
+            if (condition) {
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="ntxt1"><br>
+    <input type="text" id="ntxt2"><br>
+    <input type="text" id="ntxt3"><br>
+    <input type="text" id="ntxt4"><br>
+    <input type="text" id="ntxt5"><br>
+    <input type="text" id="ntxt6"><br>
+    Enter the element to be searched :
+    <input type="text" id="stxt">
+    <input type="button" value="Search" onclick="init()">
+
+</body>
+
+</html>
