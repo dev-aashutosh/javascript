@@ -6,23 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary search recursion</title>
     <script>
-        function init() {
-            a = []
-
-            for (i = 1; i <= 6; i++) {
-                a[i - 1] = document.getElementById("ntxt" + i).value
+        function sort(c1) {
+            const array = []
+            for (i = 0; i < 6; i++) {
+                array[i] = document.getElementById("ntxt" + (i + 1)).value
             }
-
-            a.sort(function (a, b) { return a - b })
-            srch = number(prompt("Enter the number to be search: "))
-            bSearch(a, 0, 4, srch)
-
+            array.sort(function (a, b) { return a - b })
+            console.log(array);
+            srch = prompt("enter the number to be searched")
+            bSearch(array, srch, 0, array.length - 1)
         }
 
-        function bSearch(a, l, u, sr) {
-            mid = parseInt((l + u) / 2)
-            if (condition) {
+        function bSearch(a, srch, l, u) {
+            if (l > u) {
+                alert("Element not found")
+                return
+            }
 
+            mid = parseInt((l + u) / 2)
+
+            if (a[mid == srch]) {
+                alert("Element found")
+                return
+            }
+            else if (srch < a[mid]) {
+                bSearch(a, l, mid - 1, srch)
+            }
+            else {
+                bSearch(a, l, mid - 1, srch)
             }
         }
 
@@ -37,8 +48,7 @@
     <input type="text" id="ntxt5"><br>
     <input type="text" id="ntxt6"><br>
     Enter the element to be searched :
-    <input type="text" id="stxt">
-    <input type="button" value="Search" onclick="init()">
+    <input type="button" value="Search" onclick="sort()">
 
 </body>
 
