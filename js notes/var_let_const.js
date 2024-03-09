@@ -3,8 +3,10 @@
  * - Used to define a variable.
  * - It has function scope but no block scope.
  * - Variables declared with var are hoisted to the top of their function scope.
- *   This means that the declaration of the variable is moved to the top of its function or global scope during the compilation phase.
- *   However, the initialization of the variable remains in place, so the variable will have an initial value of undefined until it is assigned a value.
+ *   This means that the declaration of the variable is moved to the top of its function or
+ *   global scope during the compilation phase.
+ *   However, the initialization of the variable remains in place, so the variable will
+ *   have an initial value of undefined until it is assigned a value.
  */
 
 // Hoisting example - will not throw an error
