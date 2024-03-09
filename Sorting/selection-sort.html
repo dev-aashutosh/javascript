@@ -1,3 +1,4 @@
+//write a program for selection sort algorithm
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,9 @@
         function sel(c1) {
 
             for (i = 0; i < c1.length; i++) {
+                swapped = 0
                 minIndex = i
+
                 for (j = i + 1; j < c1.length; j++) {
                     n1 = parseInt(c1[minIndex].value)
                     n2 = parseInt(c1[j].value)
@@ -18,6 +21,11 @@
                         minIndex = j
                     }
                 }
+
+                if (swapped == 0) {
+                    break; // If no swaps occurred, the array is already sorted
+                }
+
                 if (minIndex != i) {
                     temp = c1[minIndex].value
                     c1[minIndex].value = c1[i].value
