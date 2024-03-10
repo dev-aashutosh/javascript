@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shell sort alogrithm</title>
+    <script>
+        function shellSort(c1) {
+            size = c1.length
+            gap = parseInt(size / 2)
+
+            do {
+                do {
+                    flag = 0
+                    for (i = 0; i < size - gap; i++) {
+
+                        if (c1[i] > c1[gap + i]) {
+                            t = c1[i]
+                            c1[i] = c1[gap + i]
+                            c1[gap + i] = t
+                            flag = 1
+                        }
+                    }
+                } while (flag != 0);
+            } while (gap != 0);
+            alert(c1)
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="text" name="ntxt" id=""><br>
+        <input type="button" value="Sort" onclick="shellSort(ntxt)">
+    </form>
+</body>
+
+</html>
