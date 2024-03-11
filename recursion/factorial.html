@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+    <script>
+        function findFact(n) {
+            if (n === 1) {
+
+                return 1;
+            } else {
+                return n * findFact(n - 1);
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <form>
+        Enter a number : <input type="text" name="ntxt" id="">
+        Answer : <input type="text" name="stxt" id="">
+        <input type="button" value="Find Fact" onclick="findFact(ntxt.value)">
+    </form>
+</body>
+
+</html>
