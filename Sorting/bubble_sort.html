@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble Sort</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <script>
         function bsort(c1) {
             for (let i = 0; i < c1.length - 1; i++) {   //number of passes
@@ -34,15 +35,24 @@
     </script>
 </head>
 
-<body>
-
-    <form>
-        <input type="text" name="ntxt" id="ntxt1">
-        <input type="text" name="ntxt" id="ntxt2">
-        <input type="text" name="ntxt" id="ntxt3">
-        <input type="text" name="ntxt" id="ntxt4">
-        <button type="button" onclick="bsort(ntxt)">Sort</button>
-    </form>
+<body data-bs-theme="dark">
+    <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
+        <p class="font-monospace display-6">BUBBLE SORT ALGORITHM</p>
+        <p class="font-monospace small">Enter 10 Number to sort</p>
+        <form class="form-control border-success w-auto ">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt1">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt2">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt3">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt4">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt4">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt4">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt4">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt4">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt4">
+            <input class="form-control border-success-subtle my-2" type="text" name="ntxt" id="ntxt4">
+            <button type="button" class="btn btn-outline-success" onclick="bsort(ntxt)">Sort</button>
+        </form>
+    </div>
 </body>
 
 </html>
